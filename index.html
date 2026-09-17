@@ -373,57 +373,83 @@
 
     .projects {
       display: grid;
-
-      grid-template-columns: repeat(3, 1fr);
-
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
     }
 
     .project {
       display: flex;
-
       flex-direction: column;
-
-      min-height: 310px;
-
+      min-height: 330px;
       background:
         linear-gradient(
           145deg,
           var(--card),
           var(--card2)
         );
-
       border: 1px solid var(--line);
-
       border-radius: var(--radius);
+      padding: 28px;
+      position: relative;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
 
-      padding: 25px;
+    .project:hover {
+      transform: translateY(-5px);
+      border-color: rgba(101, 168, 255, 0.4);
+      box-shadow:
+        0 14px 34px rgba(0, 0, 0, 0.4),
+        0 0 20px rgba(101, 168, 255, 0.12);
+    }
+
+    .project-badge {
+      display: inline-block;
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent);
+      background: rgba(101, 168, 255, 0.1);
+      border: 1px solid rgba(101, 168, 255, 0.22);
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+      width: fit-content;
     }
 
     .project-top {
       display: flex;
-
       justify-content: space-between;
-
       gap: 15px;
-
       align-items: flex-start;
     }
 
     .project h3 {
       margin: 0 0 8px;
+      font-size: 1.25rem;
+      line-height: 1.35;
     }
 
-    .project p {
+    .project-tech {
+      color: #9fb0c5;
+      font-size: 0.88rem;
+      margin: 0 0 14px;
+      font-weight: 500;
+    }
+
+    .project-desc {
       color: var(--muted);
+      font-size: 0.94rem;
+      line-height: 1.6;
+      margin: 0 0 18px;
     }
 
     .project-number {
       color: var(--accent);
-
       font-weight: 900;
-
-      font-size: 1.2rem;
+      font-size: 1.25rem;
+      opacity: 0.85;
+      font-variant-numeric: tabular-nums;
     }
 
     .project .tags {
@@ -431,13 +457,44 @@
     }
 
     .project-link {
-      display: inline-block;
-
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       margin-top: 20px;
-
-      color: #9cc8ff;
-
+      padding: 9px 15px;
+      border-radius: 12px;
+      background: rgba(101, 168, 255, 0.08);
+      border: 1px solid rgba(101, 168, 255, 0.22);
+      color: #bcd9ff;
       font-weight: 700;
+      font-size: 0.86rem;
+      width: fit-content;
+      transition: all 0.22s ease;
+      text-decoration: none;
+    }
+
+    .project-link svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+      transition: transform 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .project-link:hover {
+      background: linear-gradient(
+        135deg,
+        rgba(101, 168, 255, 0.25),
+        rgba(139, 124, 255, 0.25)
+      );
+      border-color: rgba(101, 168, 255, 0.5);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px rgba(101, 168, 255, 0.18);
+    }
+
+    .project-link:hover svg {
+      transform: scale(1.1);
     }
 
     /* ================= CERTIFICATIONS ================= */
@@ -916,7 +973,9 @@
 
             <span class="tag">C++</span>
             <span class="tag">Python</span>
+            <span class="tag">Java</span>
             <span class="tag">SQL</span>
+            <span class="tag">JavaScript</span>
             <span class="tag">HTML</span>
             <span class="tag">CSS</span>
 
@@ -1116,207 +1175,164 @@
 
       <div class="projects">
 
-
         <!-- PROJECT 1 -->
-
         <article class="project">
-
           <div class="project-top">
-
             <div>
-
-              <h3>
-                Expense Tracker System
-              </h3>
-
-              <p>
-                C++ • JavaScript • HTML • CSS
-              </p>
-
+              <span class="project-badge">Machine Learning & Healthcare</span>
+              <h3>Hospital Patient Readmission Predictor</h3>
+              <p class="project-tech">Python • Scikit-Learn • Streamlit • Pandas • NumPy • Joblib</p>
             </div>
-
-            <div class="project-number">
-              01
-            </div>
-
+            <div class="project-number">01</div>
           </div>
-
-          <p style="margin-top:18px">
-
-            A C++-based expense tracker using
-            Data Structures and Algorithms to
-            manage, categorize, search, filter,
-            and retrieve expense records.
-
-            Includes a web-based interface for
-            an organized tracking experience.
-
+          <p class="project-desc">
+            A machine learning clinical decision support system that analyzes patient demographic and clinical data to predict whether a diabetic patient is likely to be readmitted within 30 days. Uses Random Forest classification with Accuracy, Precision, Recall, and F1-score evaluation and an interactive Streamlit UI.
           </p>
-
           <div class="tags">
-
-            <span class="tag">
-              DSA
-            </span>
-
-            <span class="tag">
-              OOP
-            </span>
-
-            <span class="tag">
-              File Handling
-            </span>
-
-            <span class="tag">
-              Web UI
-            </span>
-
+            <span class="tag">Machine Learning</span>
+            <span class="tag">Random Forest</span>
+            <span class="tag">Clinical Data</span>
+            <span class="tag">Classification</span>
+            <span class="tag">Streamlit</span>
+            <span class="tag">Scikit-Learn</span>
           </div>
-
           <a
             class="project-link"
-            href="https://github.com/YashashreeB-02"
+            href="https://github.com/YashashreeB-02/Hospital-Patient-Readmission-Predictor"
             target="_blank"
+            rel="noopener noreferrer"
           >
-            View GitHub ↗
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            View Repository ↗
           </a>
-
         </article>
-
 
         <!-- PROJECT 2 -->
-
         <article class="project">
-
           <div class="project-top">
-
             <div>
-
-              <h3>
-                Hospital Patient
-                Readmission Predictor
-              </h3>
-
-              <p>
-                Python • Pandas • NumPy •
-                Scikit-Learn • Joblib • Streamlit
-              </p>
-
+              <span class="project-badge">C++ & Algorithms</span>
+              <h3>Expense Tracker System</h3>
+              <p class="project-tech">C++17 • Data Structures • STL • Merge Sort • File Handling</p>
             </div>
-
-            <div class="project-number">
-              02
-            </div>
-
+            <div class="project-number">02</div>
           </div>
-
-          <p style="margin-top:18px">
-
-            A machine learning system that uses
-            patient demographic and clinical data
-            to predict readmission risk.
-
-            Random Forest classification is evaluated
-            with Accuracy, Precision, Recall,
-            and F1-score.
-
+          <p class="project-desc">
+            A C++17 console-based expense management system built on Object-Oriented Programming and robust STL data structures. Implements Merge Sort for high-speed expense sorting, Linear Search for category queries, persistent file I/O for saving financial records, and strict input validation.
           </p>
-
           <div class="tags">
-
-            <span class="tag">
-              Machine Learning
-            </span>
-
-            <span class="tag">
-              Random Forest
-            </span>
-
-            <span class="tag">
-              Classification
-            </span>
-
-            <span class="tag">
-              Streamlit
-            </span>
-
+            <span class="tag">C++</span>
+            <span class="tag">DSA</span>
+            <span class="tag">Merge Sort</span>
+            <span class="tag">OOP</span>
+            <span class="tag">File Handling</span>
+            <span class="tag">STL</span>
           </div>
-
           <a
             class="project-link"
-            href="https://github.com/YashashreeB-02"
+            href="https://github.com/YashashreeB-02/Expense-Tracker-System"
             target="_blank"
+            rel="noopener noreferrer"
           >
-            View GitHub ↗
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            View Repository ↗
           </a>
-
         </article>
 
-
         <!-- PROJECT 3 -->
-
         <article class="project">
-
           <div class="project-top">
-
             <div>
-
-              <h3>
-                Adaptive Resource Allocation
-              </h3>
-
-              <p>
-                Python • psutil • PyQt6
-              </p>
-
+              <span class="project-badge">Operating Systems & GUI</span>
+              <h3>Adaptive Resource Allocation System</h3>
+              <p class="project-tech">Python • psutil • PyQt6 • Multiprocessing • Dynamic Scheduling</p>
             </div>
-
-            <div class="project-number">
-              03
-            </div>
-
+            <div class="project-number">03</div>
           </div>
-
-          <p style="margin-top:18px">
-
-            A resource allocation system that
-            dynamically monitors CPU and memory
-            utilization across processes.
-
-            It supports priority-based allocation,
-            threshold monitoring, and real-time
-            process management through a GUI.
-
+          <p class="project-desc">
+            A real-time operating system simulation and desktop management utility that actively monitors CPU and memory consumption across concurrent child processes. Features dynamic priority-based scheduling, safety thresholds, and an interactive desktop graphical dashboard powered by PyQt6.
           </p>
-
           <div class="tags">
-
-            <span class="tag">
-              OS Concepts
-            </span>
-
-            <span class="tag">
-              Multiprocessing
-            </span>
-
-            <span class="tag">
-              Scheduling
-            </span>
-
-            <span class="tag">
-              PyQt6
-            </span>
-
+            <span class="tag">OS Concepts</span>
+            <span class="tag">Multiprocessing</span>
+            <span class="tag">Scheduling</span>
+            <span class="tag">psutil</span>
+            <span class="tag">PyQt6</span>
+            <span class="tag">Resource Allocation</span>
           </div>
-
           <a
             class="project-link"
-            href="https://github.com/YashashreeB-02"
+            href="https://github.com/YashashreeB-02/Adaptive-Resource-Allocation-in-Multiprogramming-Systems"
             target="_blank"
+            rel="noopener noreferrer"
           >
-            View GitHub ↗
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            View Repository ↗
           </a>
+        </article>
 
+        <!-- PROJECT 4 -->
+        <article class="project">
+          <div class="project-top">
+            <div>
+              <span class="project-badge">Cybersecurity & Java</span>
+              <h3>Simple Password Strength Checker</h3>
+              <p class="project-tech">Java • Object-Oriented Programming • Security Rules • String Traversal</p>
+            </div>
+            <div class="project-number">04</div>
+          </div>
+          <p class="project-desc">
+            A command-line Java security application that evaluates user password entropy and strength based on standard security rules. Analyzes character variety, length thresholds, and common vulnerability patterns, providing actionable feedback and enforcing strong password creation through automated validation loops.
+          </p>
+          <div class="tags">
+            <span class="tag">Java</span>
+            <span class="tag">Cybersecurity</span>
+            <span class="tag">Password Entropy</span>
+            <span class="tag">DSA Traversal</span>
+            <span class="tag">OOP</span>
+            <span class="tag">Security Rules</span>
+          </div>
+          <a
+            class="project-link"
+            href="https://github.com/YashashreeB-02/Simple-Password-Strength-Checker"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            View Repository ↗
+          </a>
+        </article>
+
+        <!-- PROJECT 5 -->
+        <article class="project">
+          <div class="project-top">
+            <div>
+              <span class="project-badge">Frontend Web Development</span>
+              <h3>Food Recipes Web Portal</h3>
+              <p class="project-tech">HTML5 • CSS3 • JavaScript • Responsive UI • Flexbox & Grid</p>
+            </div>
+            <div class="project-number">05</div>
+          </div>
+          <p class="project-desc">
+            A responsive, multi-page culinary discovery and recipe sharing web portal. Features clean categorized food sections for starters, fresh salads, vegan recipes, and desserts, complete with culinary reviews, recipe breakdowns, and an engaging visual aesthetic.
+          </p>
+          <div class="tags">
+            <span class="tag">HTML5</span>
+            <span class="tag">CSS3</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Responsive UI</span>
+            <span class="tag">Web Design</span>
+            <span class="tag">Multi-Page</span>
+          </div>
+          <a
+            class="project-link"
+            href="https://github.com/YashashreeB-02/Food-Recipes"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            View Repository ↗
+          </a>
         </article>
 
       </div>
