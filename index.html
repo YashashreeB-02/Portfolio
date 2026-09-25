@@ -87,7 +87,7 @@
     }
 
     .container {
-      width: min(1120px, 92%);
+      width: min(1200px, 94%);
       margin: auto;
     }
 
@@ -610,8 +610,8 @@
 
     .projects {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-      gap: 28px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
     }
 
     .project {
@@ -619,9 +619,9 @@
       flex-direction: column;
       background: #ffffff;
       border: 1px solid var(--line);
-      border-radius: var(--radius);
+      border-radius: 18px;
       overflow: hidden;
-      box-shadow: var(--shadow-md);
+      box-shadow: var(--shadow-sm);
       transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
     }
 
@@ -630,15 +630,15 @@
     }
 
     .project:hover {
-      transform: translateY(-6px);
+      transform: translateY(-4px);
       border-color: #93c5fd;
-      box-shadow: var(--shadow-xl);
+      box-shadow: var(--shadow-lg);
     }
 
     .project-media {
       position: relative;
       width: 100%;
-      aspect-ratio: 16 / 9.6;
+      height: 175px;
       background: #0f172a;
       overflow: hidden;
       border-bottom: 1px solid #e2e8f0;
@@ -659,23 +659,23 @@
 
     .project-media-badge {
       position: absolute;
-      top: 12px;
-      right: 12px;
+      top: 10px;
+      right: 10px;
       background: rgba(15, 23, 42, 0.75);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
       color: #ffffff;
-      font-size: 0.72rem;
+      font-size: 0.68rem;
       font-weight: 700;
       letter-spacing: 0.04em;
-      padding: 4px 10px;
+      padding: 3px 8px;
       border-radius: 999px;
       border: 1px solid rgba(255, 255, 255, 0.2);
       z-index: 2;
     }
 
     .project-body {
-      padding: 24px 26px 26px;
+      padding: 16px 18px 18px;
       display: flex;
       flex-direction: column;
       flex: 1;
@@ -685,15 +685,15 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
     }
 
     .project-badge {
-      font-size: 0.74rem;
+      font-size: 0.68rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
-      padding: 4px 12px;
+      letter-spacing: 0.05em;
+      padding: 3px 10px;
       border-radius: 999px;
       background: #eff6ff;
       border: 1px solid #bfdbfe;
@@ -733,29 +733,40 @@
 
     .project-number {
       font-weight: 800;
-      font-size: 1.1rem;
+      font-size: 0.95rem;
       color: #94a3b8;
       font-family: 'JetBrains Mono', monospace;
     }
 
     .project h3 {
-      font-size: 1.25rem;
+      font-size: 1.08rem;
       font-weight: 800;
       color: #0f172a;
       line-height: 1.35;
-      margin: 0 0 10px;
+      margin: 0 0 8px;
     }
 
     .project-desc {
       color: var(--muted);
-      font-size: 0.93rem;
-      line-height: 1.6;
-      margin: 0 0 16px;
+      font-size: 0.84rem;
+      line-height: 1.5;
+      margin: 0 0 12px;
+    }
+
+    .project .tags {
+      margin-top: auto;
+      margin-bottom: 14px;
+      gap: 5px;
+    }
+
+    .project .tag {
+      padding: 3px 8px;
+      font-size: 0.72rem;
     }
 
     .project-links-row {
       display: flex;
-      gap: 12px;
+      gap: 8px;
       align-items: center;
     }
 
@@ -764,10 +775,10 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      padding: 10px 16px;
-      border-radius: 12px;
-      font-size: 0.88rem;
+      gap: 6px;
+      padding: 8px 12px;
+      border-radius: 10px;
+      font-size: 0.8rem;
       font-weight: 700;
       text-decoration: none;
       transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
@@ -777,14 +788,14 @@
     .project-btn-primary {
       background: linear-gradient(135deg, #2563eb, #1d4ed8);
       color: #ffffff;
-      box-shadow: 0 3px 10px rgba(37, 99, 235, 0.2);
+      box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
       border: 1px solid transparent;
     }
 
     .project-btn-primary:hover {
       background: linear-gradient(135deg, #1d4ed8, #1e40af);
       transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(37, 99, 235, 0.32);
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
       color: #ffffff;
     }
 
@@ -1185,6 +1196,12 @@
     }
 
     /* ================= RESPONSIVE ================= */
+
+    @media (max-width: 1050px) {
+      .projects {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
 
     @media (max-width: 850px) {
       .hero-grid,
