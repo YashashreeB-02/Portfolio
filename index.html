@@ -831,64 +831,14 @@
       font-weight: 800;
       color: #0f172a;
       line-height: 1.35;
-      margin: 0 0 6px;
+      margin: 0 0 10px;
     }
 
-    .project-subtitle {
-      color: #4f46e5;
-      font-size: 0.86rem;
-      font-weight: 600;
-      margin: 0 0 16px;
-    }
-
-    .project-desc-list {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 9px;
-    }
-
-    .project-desc-list li {
-      font-size: 0.91rem;
+    .project-desc {
+      color: var(--muted);
+      font-size: 0.93rem;
       line-height: 1.6;
-      color: #334155;
-      position: relative;
-      padding-left: 18px;
-    }
-
-    .project-desc-list li::before {
-      content: "•";
-      position: absolute;
-      left: 4px;
-      top: 0;
-      color: #2563eb;
-      font-weight: 900;
-      font-size: 1.15rem;
-    }
-
-    .project-tech-block {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 12px;
-      padding: 14px 16px;
-      margin-top: auto;
-      margin-bottom: 22px;
-    }
-
-    .tech-block-title {
-      display: block;
-      font-size: 0.74rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: #64748b;
-      margin-bottom: 8px;
-    }
-
-    .project-tech-block .tags {
-      margin-top: 0;
+      margin: 0 0 16px;
     }
 
     .project-links-row {
@@ -1853,67 +1803,38 @@
         </h2>
 
         <p class="section-desc">
-          Categorized technical projects covering machine learning, systems programming, data structures, cybersecurity, and responsive web platforms.
+          Technical projects focused on machine learning, systems programming, data structures, and web development.
         </p>
 
-      </div>
-
-      <!-- Category Filter Tabs -->
-      <div class="project-filters">
-        <button class="filter-btn active" onclick="filterProjects('all', event)">
-          All Projects <span class="filter-count">5</span>
-        </button>
-        <button class="filter-btn" onclick="filterProjects('ml', event)">
-          Machine Learning & AI <span class="filter-count">1</span>
-        </button>
-        <button class="filter-btn" onclick="filterProjects('systems', event)">
-          Systems & OS <span class="filter-count">1</span>
-        </button>
-        <button class="filter-btn" onclick="filterProjects('dsa', event)">
-          Algorithms & DSA <span class="filter-count">2</span>
-        </button>
-        <button class="filter-btn" onclick="filterProjects('web', event)">
-          Web Applications <span class="filter-count">1</span>
-        </button>
       </div>
 
       <div class="projects">
 
         <!-- PROJECT 1: Hospital Patient Readmission Predictor -->
-        <article class="project" data-category="ml">
+        <article class="project">
           <div class="project-media">
             <img src="assets/projects/hospital_readmission_preview.png" alt="Hospital Patient Readmission Predictor Streamlit Dashboard" loading="lazy" />
-            <span class="project-media-badge">Streamlit Decision Support</span>
           </div>
 
           <div class="project-body">
             <div class="project-badge-row">
-              <span class="project-badge badge-ml">Machine Learning & Healthcare</span>
+              <span class="project-badge badge-ml">Machine Learning & AI</span>
               <span class="project-number">01</span>
             </div>
 
             <h3>Hospital Patient Readmission Predictor</h3>
-            <p class="project-subtitle">Clinical Decision Support • 30-Day Readmission Risk Stratification</p>
 
-            <ul class="project-desc-list">
-              <li>Designed an end-to-end machine learning clinical decision support system analyzing multi-dimensional patient and encounter data (demographics, hospital stay, lab procedures, medications, and previous inpatient visits) to predict 30-day diabetic readmission risk.</li>
-              <li>Engineered clinical indicators using Python, Pandas, NumPy, Scikit-Learn, and Joblib to clean, encode, and scale 99,343 post-discharge eligible encounters from the UCI 130-US Hospitals dataset.</li>
-              <li>Trained and regularized a Gradient Boosted Decision Tree pipeline, achieving 63.54% test accuracy, 0.6828 ROC-AUC score, and eliminating model overfitting gap down to 1.9%.</li>
-              <li>Built an interactive Streamlit graphical dashboard featuring real-time risk gauges, high-risk factor analysis, and tailored post-discharge clinical care protocols.</li>
-            </ul>
+            <p class="project-desc">
+              Clinical decision support system that analyzes 99,000+ patient records to predict 30-day diabetic readmission risk. Trained a regularized Gradient Boosted model achieving 63.54% test accuracy and 0.6828 ROC-AUC, deployed with an interactive Streamlit risk assessment dashboard.
+            </p>
 
-            <div class="project-tech-block">
-              <span class="tech-block-title">Technologies Used:</span>
-              <div class="tags">
-                <span class="tag">Python</span>
-                <span class="tag">Scikit-Learn</span>
-                <span class="tag">Streamlit</span>
-                <span class="tag">Pandas</span>
-                <span class="tag">NumPy</span>
-                <span class="tag">Joblib</span>
-                <span class="tag">Gradient Boosting</span>
-                <span class="tag">ROC-AUC Evaluation</span>
-              </div>
+            <div class="tags" style="margin-top: auto; margin-bottom: 18px;">
+              <span class="tag">Python</span>
+              <span class="tag">Scikit-Learn</span>
+              <span class="tag">Streamlit</span>
+              <span class="tag">Pandas</span>
+              <span class="tag">NumPy</span>
+              <span class="tag">Joblib</span>
             </div>
 
             <div class="project-links-row">
@@ -1934,10 +1855,9 @@
         </article>
 
         <!-- PROJECT 2: Expense Tracker System -->
-        <article class="project" data-category="dsa">
+        <article class="project">
           <div class="project-media">
-            <img src="assets/projects/expense_tracker_preview.png" alt="Expense Tracker System Architecture and Dashboard" loading="lazy" />
-            <span class="project-media-badge">C++17 Core Engine</span>
+            <img src="assets/projects/expense_tracker_preview.png" alt="Expense Tracker System" loading="lazy" />
           </div>
 
           <div class="project-body">
@@ -1947,26 +1867,18 @@
             </div>
 
             <h3>Expense Tracker System</h3>
-            <p class="project-subtitle">Personal Finance Engine • Object-Oriented STL Architecture</p>
 
-            <ul class="project-desc-list">
-              <li>Designed an interactive expense management system to simplify personal spending tracking by enabling users to record, organize, categorize, search, and monitor transactions efficiently.</li>
-              <li>Implemented in C++17 utilizing Object-Oriented Programming (OOP), dynamic STL vectors, and persistent file I/O to maintain an audit trail across sessions in <code>data/Expenses.txt</code>.</li>
-              <li>Engineered Merge Sort for rapid $O(n \log n)$ expenditure sorting by amount and Linear Search for real-time category queries and spending breakdowns.</li>
-              <li>Integrated a LIFO Stack data structure to implement an instant undo-delete safety mechanism, preventing accidental loss of financial records.</li>
-            </ul>
+            <p class="project-desc">
+              Interactive personal expense management system developed in C++17 with OOP principles and STL data structures. Implements Merge Sort for O(n log n) expenditure sorting, Linear Search for dynamic category queries, persistent file storage in data/Expenses.txt, and a LIFO Stack for undoing deletions.
+            </p>
 
-            <div class="project-tech-block">
-              <span class="tech-block-title">Technologies Used:</span>
-              <div class="tags">
-                <span class="tag">C++17</span>
-                <span class="tag">STL Vectors</span>
-                <span class="tag">Merge Sort</span>
-                <span class="tag">Linear Search</span>
-                <span class="tag">Stack (LIFO)</span>
-                <span class="tag">File Handling & I/O</span>
-                <span class="tag">OOP Design</span>
-              </div>
+            <div class="tags" style="margin-top: auto; margin-bottom: 18px;">
+              <span class="tag">C++17</span>
+              <span class="tag">STL Vectors</span>
+              <span class="tag">Merge Sort</span>
+              <span class="tag">Linear Search</span>
+              <span class="tag">Stack (LIFO)</span>
+              <span class="tag">File I/O</span>
             </div>
 
             <div class="project-links-row">
@@ -1987,10 +1899,9 @@
         </article>
 
         <!-- PROJECT 3: Adaptive Resource Allocation in Multiprogramming Systems -->
-        <article class="project" data-category="systems">
+        <article class="project">
           <div class="project-media">
             <img src="assets/projects/adaptive_os_1.jpeg" alt="Adaptive Resource Allocation PyQt6 Desktop GUI Running" loading="lazy" />
-            <span class="project-media-badge">PyQt6 Desktop GUI</span>
           </div>
 
           <div class="project-body">
@@ -2000,26 +1911,17 @@
             </div>
 
             <h3>Adaptive Resource Allocation System</h3>
-            <p class="project-subtitle">Dynamic OS Simulation • Real-Time CPU & Memory Balancer</p>
 
-            <ul class="project-desc-list">
-              <li>Developed an adaptive resource allocation system to monitor and optimize CPU and memory utilization across concurrent processes, preventing bottlenecks in multiprogramming environments.</li>
-              <li>Executed using Python, <code>psutil</code>, multiprocessing, and subprocess management to track live PID tables, individual process loads, and global system capacity.</li>
-              <li>Implemented automated heuristic threshold monitoring (pausing highest-memory processes when RAM &gt; 80%, boosting priorities and resuming tasks when CPU &lt; 40%).</li>
-              <li>Delivered a responsive PyQt6 desktop GUI displaying live CPU/memory charts, PID states, and interactive pause/resume process controls.</li>
-            </ul>
+            <p class="project-desc">
+              Real-time operating system simulation monitoring CPU and memory utilization across concurrent child processes using psutil. Automatically balances system resources by pausing high-memory jobs when RAM exceeds 80% and adjusting priority levels via a responsive PyQt6 desktop GUI.
+            </p>
 
-            <div class="project-tech-block">
-              <span class="tech-block-title">Technologies Used:</span>
-              <div class="tags">
-                <span class="tag">Python</span>
-                <span class="tag">psutil</span>
-                <span class="tag">PyQt6 GUI</span>
-                <span class="tag">Multiprocessing</span>
-                <span class="tag">Subprocess Management</span>
-                <span class="tag">Process Scheduling</span>
-                <span class="tag">Threshold Monitoring</span>
-              </div>
+            <div class="tags" style="margin-top: auto; margin-bottom: 18px;">
+              <span class="tag">Python</span>
+              <span class="tag">psutil</span>
+              <span class="tag">PyQt6 GUI</span>
+              <span class="tag">Multiprocessing</span>
+              <span class="tag">Process Scheduling</span>
             </div>
 
             <div class="project-links-row">
@@ -2040,10 +1942,9 @@
         </article>
 
         <!-- PROJECT 4: Simple Password Strength Checker -->
-        <article class="project" data-category="dsa">
+        <article class="project">
           <div class="project-media">
-            <img src="assets/projects/password_checker_preview.png" alt="Simple Password Strength Checker Terminal and Security Analysis" loading="lazy" />
-            <span class="project-media-badge">Java Security Engine</span>
+            <img src="assets/projects/password_checker_preview.png" alt="Simple Password Strength Checker" loading="lazy" />
           </div>
 
           <div class="project-body">
@@ -2053,25 +1954,17 @@
             </div>
 
             <h3>Simple Password Strength Checker</h3>
-            <p class="project-subtitle">Password Entropy Engine • Security Rule Enforcement</p>
 
-            <ul class="project-desc-list">
-              <li>Developed a command-line Java security application that evaluates user password entropy and strength against industry-standard cybersecurity guidelines.</li>
-              <li>Applied fundamental Data Structures and Algorithms (DSA) including string manipulation, array lists, and linear traversal with $O(n)$ time and $O(1)$ space efficiency.</li>
-              <li>Systematically verifies criteria including minimum 8-character length, uppercase/lowercase letters, numeric digits, and special character symbols.</li>
-              <li>Features an automated suggestion generator that pinpoints weak security vectors and prompts the user in an iterative feedback loop until strong criteria are met.</li>
-            </ul>
+            <p class="project-desc">
+              Java command-line cybersecurity application that evaluates user password entropy and enforces security rules using linear string traversal. Analyzes length, character variety, digits, and symbols with O(n) time complexity, providing immediate suggestions and enforcing strong passwords.
+            </p>
 
-            <div class="project-tech-block">
-              <span class="tech-block-title">Technologies Used:</span>
-              <div class="tags">
-                <span class="tag">Java</span>
-                <span class="tag">DSA (Strings & Traversal)</span>
-                <span class="tag">Password Entropy</span>
-                <span class="tag">Cybersecurity Rules</span>
-                <span class="tag">CLI Engine</span>
-                <span class="tag">OOP Principles</span>
-              </div>
+            <div class="tags" style="margin-top: auto; margin-bottom: 18px;">
+              <span class="tag">Java</span>
+              <span class="tag">DSA Traversal</span>
+              <span class="tag">Password Entropy</span>
+              <span class="tag">Security Rules</span>
+              <span class="tag">OOP</span>
             </div>
 
             <div class="project-links-row">
@@ -2092,10 +1985,9 @@
         </article>
 
         <!-- PROJECT 5: Food Recipes Web Portal -->
-        <article class="project" data-category="web">
+        <article class="project">
           <div class="project-media">
-            <img src="assets/projects/food_recipes_preview.png" alt="Food Recipes Pantry to Platter Web Portal Screenshot" loading="lazy" />
-            <span class="project-media-badge">Frontend Web Portal</span>
+            <img src="assets/projects/food_recipes_preview.png" alt="Food Recipes Web Portal" loading="lazy" />
           </div>
 
           <div class="project-body">
@@ -2105,26 +1997,17 @@
             </div>
 
             <h3>Food Recipes Web Portal</h3>
-            <p class="project-subtitle">Pantry to Platter • Culinary Discovery & Community Portal</p>
 
-            <ul class="project-desc-list">
-              <li>Designed and developed a responsive, multi-page culinary discovery portal named <em>Pantry to Platter</em> to guide cooking enthusiasts through diverse international recipes.</li>
-              <li>Built a modular frontend architecture using semantic HTML5, custom CSS3 styling, and JavaScript to deliver smooth navigation across mobile, tablet, and desktop viewports.</li>
-              <li>Features structured recipe catalogs for fresh salads, vegan specialties, appetizers/starters, and desserts, complete with culinary tips and step-by-step instructions.</li>
-              <li>Integrated dedicated sections for culinary reviews, ingredient sourcing guides, and an interactive feedback submission interface.</li>
-            </ul>
+            <p class="project-desc">
+              A responsive multi-page culinary discovery and recipe sharing portal named Pantry to Platter. Built using HTML5, CSS3, and JavaScript, it features curated categories for salads, vegan dishes, starters, and desserts with ingredient guides and an interactive user review form.
+            </p>
 
-            <div class="project-tech-block">
-              <span class="tech-block-title">Technologies Used:</span>
-              <div class="tags">
-                <span class="tag">HTML5</span>
-                <span class="tag">CSS3</span>
-                <span class="tag">JavaScript</span>
-                <span class="tag">Responsive Design</span>
-                <span class="tag">Flexbox & CSS Grid</span>
-                <span class="tag">UI/UX Design</span>
-                <span class="tag">Multi-Page Architecture</span>
-              </div>
+            <div class="tags" style="margin-top: auto; margin-bottom: 18px;">
+              <span class="tag">HTML5</span>
+              <span class="tag">CSS3</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Responsive UI</span>
+              <span class="tag">Flexbox & Grid</span>
             </div>
 
             <div class="project-links-row">
