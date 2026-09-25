@@ -818,72 +818,7 @@
       flex-shrink: 0;
     }
 
-    /* Interactive Showcase Modal */
-    .project-modal-backdrop {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(15, 23, 42, 0.7);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-      z-index: 1000;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
 
-    .project-modal-backdrop.open {
-      display: flex;
-    }
-
-    .project-modal-card {
-      background: #ffffff;
-      border: 1px solid #cbd5e1;
-      border-radius: 20px;
-      max-width: 850px;
-      width: 100%;
-      max-height: 90vh;
-      overflow-y: auto;
-      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3);
-      position: relative;
-      animation: modalSlideUp 0.28s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    @keyframes modalSlideUp {
-      from { opacity: 0; transform: translateY(20px) scale(0.97); }
-      to { opacity: 1; transform: translateY(0) scale(1); }
-    }
-
-    .modal-close-btn {
-      position: absolute;
-      top: 18px;
-      right: 20px;
-      background: #f1f5f9;
-      border: 1px solid #e2e8f0;
-      border-radius: 50%;
-      width: 36px;
-      height: 36px;
-      display: grid;
-      place-items: center;
-      font-size: 1.2rem;
-      color: #475569;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      z-index: 10;
-    }
-
-    .modal-close-btn:hover {
-      background: #e2e8f0;
-      color: #0f172a;
-      transform: rotate(90deg);
-    }
-
-    .modal-content-area {
-      padding: 32px;
-    }
 
     /* ================= CERTIFICATIONS ================= */
 
@@ -1706,17 +1641,14 @@
             </div>
 
             <div class="project-links-row">
-              <button class="project-btn project-btn-primary" onclick="openProjectModal('hospital')">
-                <span>⚡</span> Live Demo
-              </button>
               <a
-                class="project-btn project-btn-secondary"
+                class="project-btn project-btn-primary"
                 href="https://github.com/YashashreeB-02/Hospital-Patient-Readmission-Predictor"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                Source Code ↗
+                View Source Code ↗
               </a>
             </div>
           </div>
@@ -1750,17 +1682,14 @@
             </div>
 
             <div class="project-links-row">
-              <button class="project-btn project-btn-primary" onclick="openProjectModal('expense')">
-                <span>⚡</span> Live Demo
-              </button>
               <a
-                class="project-btn project-btn-secondary"
+                class="project-btn project-btn-primary"
                 href="https://github.com/YashashreeB-02/Expense-Tracker-System"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                Source Code ↗
+                View Source Code ↗
               </a>
             </div>
           </div>
@@ -1793,17 +1722,14 @@
             </div>
 
             <div class="project-links-row">
-              <button class="project-btn project-btn-primary" onclick="openProjectModal('adaptive_os')">
-                <span>⚡</span> Live Demo
-              </button>
               <a
-                class="project-btn project-btn-secondary"
+                class="project-btn project-btn-primary"
                 href="https://github.com/YashashreeB-02/Adaptive-Resource-Allocation-in-Multiprogramming-Systems"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                Source Code ↗
+                View Source Code ↗
               </a>
             </div>
           </div>
@@ -1836,17 +1762,14 @@
             </div>
 
             <div class="project-links-row">
-              <button class="project-btn project-btn-primary" onclick="openProjectModal('password')">
-                <span>⚡</span> Live Demo
-              </button>
               <a
-                class="project-btn project-btn-secondary"
+                class="project-btn project-btn-primary"
                 href="https://github.com/YashashreeB-02/Simple-Password-Strength-Checker"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                Source Code ↗
+                View Source Code ↗
               </a>
             </div>
           </div>
@@ -1879,17 +1802,14 @@
             </div>
 
             <div class="project-links-row">
-              <button class="project-btn project-btn-primary" onclick="openProjectModal('food')">
-                <span>⚡</span> Live Demo
-              </button>
               <a
-                class="project-btn project-btn-secondary"
+                class="project-btn project-btn-primary"
                 href="https://github.com/YashashreeB-02/Food-Recipes"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                Source Code ↗
+                View Source Code ↗
               </a>
             </div>
           </div>
@@ -2456,21 +2376,9 @@
 
   <footer>
 
-    © 2026 Yashashree Ganesh Borkar
-    • Aspiring AI / ML Engineer • Data Science & Machine Learning
+    © 2026 Yashashree Ganesh Borkar • Aspiring AI / ML Engineer • Data Science & Machine Learning
 
   </footer>
-
-
-  <!-- ================= PROJECT SHOWCASE MODAL ================= -->
-  <div id="projectModal" class="project-modal-backdrop" onclick="handleModalBackdropClick(event)">
-    <div class="project-modal-card">
-      <button class="modal-close-btn" onclick="closeProjectModal()" aria-label="Close modal">✕</button>
-      <div id="modalContentArea" class="modal-content-area">
-        <!-- Dynamic Content Injected via openProjectModal() -->
-      </div>
-    </div>
-  </div>
 
   <!-- ================= JAVASCRIPT ================= -->
   <script>
@@ -2479,270 +2387,6 @@
       const navLinks = document.querySelector(".nav-links");
       if (navLinks) {
         navLinks.classList.toggle("open");
-      }
-    }
-
-    // Projects Category Filtering
-    function filterProjects(category, event) {
-      if (event) {
-        event.preventDefault();
-        const filterBtns = document.querySelectorAll(".filter-btn");
-        filterBtns.forEach(btn => btn.classList.remove("active"));
-        event.currentTarget.classList.add("active");
-      }
-
-      const projects = document.querySelectorAll(".project");
-      projects.forEach(project => {
-        const projectCat = project.getAttribute("data-category");
-        if (category === "all" || projectCat === category) {
-          project.classList.remove("hidden");
-        } else {
-          project.classList.add("hidden");
-        }
-      });
-    }
-
-    // Project Showcase Modal Data & Handler
-    const projectData = {
-      hospital: {
-        badge: "Machine Learning & Healthcare AI",
-        badgeClass: "badge-ml",
-        title: "Hospital Patient Readmission Predictor",
-        subtitle: "Clinical Decision Support System • 30-Day Diabetic Readmission",
-        image: "assets/projects/hospital_readmission_preview.png",
-        github: "https://github.com/YashashreeB-02/Hospital-Patient-Readmission-Predictor",
-        desc: "A machine learning clinical decision support system designed to predict whether a diabetic patient is likely to be readmitted within 30 days of discharge. Analyzed over 100,000 clinical encounters from the UCI 130-US Hospitals dataset, engineered clinical risk signals, and regularized a Gradient Boosted Decision Tree model.",
-        highlights: [
-          "<strong>63.54% Test Accuracy</strong> and <strong>0.6828 ROC-AUC</strong> with overfitting gap reduced to 1.9%",
-          "Interactive <strong>Streamlit GUI</strong> with multi-tab patient evaluation and dynamic risk gauge",
-          "Automated clinical risk factor detection (insulin adjustments, prior inpatient history, comorbidities)",
-          "Actionable discharge protocols including post-discharge outreach and medication reconciliation"
-        ],
-        techStack: ["Python", "Scikit-Learn", "Streamlit", "Pandas", "NumPy", "Joblib", "Gradient Boosting"],
-        quickRun: "git clone https://github.com/YashashreeB-02/Hospital-Patient-Readmission-Predictor.git\npip install -r requirements.txt\nstreamlit run app.py"
-      },
-      expense: {
-        badge: "C++ & Algorithms",
-        badgeClass: "badge-dsa",
-        title: "Expense Tracker System",
-        subtitle: "Personal Finance Engine • Object-Oriented STL Architecture",
-        image: "assets/projects/expense_tracker_preview.png",
-        github: "https://github.com/YashashreeB-02/Expense-Tracker-System",
-        desc: "A C++17 expense management system built on Object-Oriented Programming and robust STL data structures. Demonstrates merge sort for rapid expenditure sorting, linear search for category filtering, persistent file storage, and a LIFO stack for undoing deletions.",
-        highlights: [
-          "High-performance <strong>Merge Sort algorithm (O(n log n))</strong> for sorting expenditures by amount",
-          "<strong>LIFO Stack data structure</strong> for instant recovery of accidentally deleted records",
-          "Persistent file serialization saving transaction history to <code>data/Expenses.txt</code>",
-          "Strict input validation for expense categories, amounts, and dates"
-        ],
-        techStack: ["C++17", "STL Vectors", "Merge Sort", "Linear Search", "Stack (LIFO)", "File Handling", "OOP"],
-        quickRun: "git clone https://github.com/YashashreeB-02/Expense-Tracker-System.git\nmake && make run"
-      },
-      adaptive_os: {
-        badge: "Operating Systems & GUI",
-        badgeClass: "badge-systems",
-        title: "Adaptive Resource Allocation in Multiprogramming Systems",
-        subtitle: "Dynamic OS Simulation • Real-Time CPU & Memory Balancer",
-        image: "assets/projects/adaptive_os_1.jpeg",
-        github: "https://github.com/YashashreeB-02/Adaptive-Resource-Allocation-in-Multiprogramming-Systems",
-        desc: "A real-time operating system simulation and desktop management utility that actively monitors CPU and memory consumption across concurrent processes. Prevents resource bottlenecks using adaptive heuristics and dynamic priority adjustments.",
-        highlights: [
-          "Real-time monitoring using <code>psutil</code> displaying per-process CPU%, Memory MB, and PID tables",
-          "Adaptive heuristics: automatically pauses highest-memory process if RAM > 80%; boosts priority if CPU < 40%",
-          "Responsive <strong>PyQt6 graphical interface</strong> with live metric updates every second",
-          "Safe Windows spawn multiprocessing architecture to prevent re-import loops"
-        ],
-        techStack: ["Python", "psutil", "PyQt6 GUI", "Multiprocessing", "Subprocess Management", "Process Scheduling"],
-        quickRun: "git clone https://github.com/YashashreeB-02/Adaptive-Resource-Allocation-in-Multiprogramming-Systems.git\npip install psutil PyQt6\npython main.py"
-      },
-      password: {
-        badge: "Cybersecurity & Java",
-        badgeClass: "badge-sec",
-        title: "Simple Password Strength Checker",
-        subtitle: "Password Entropy Engine • Security Rule Enforcement",
-        image: "assets/projects/password_checker_preview.png",
-        github: "https://github.com/YashashreeB-02/Simple-Password-Strength-Checker",
-        desc: "A Java security application that evaluates user password entropy and strength against industry-standard cybersecurity guidelines. Demonstrates string manipulation, arrays, and linear traversal in O(n) time and O(1) space complexity.",
-        highlights: [
-          "Comprehensive security validation across length (≥ 8), uppercase, lowercase, numbers, and symbols",
-          "Actionable suggestion generator that identifies credential vulnerabilities",
-          "Automated validation loop prompting until secure credentials are confirmed",
-          "Live interactive tester available below to test in real time"
-        ],
-        techStack: ["Java", "DSA (Strings & Traversal)", "Password Entropy", "Security Rules", "CLI Engine"],
-        isInteractiveTester: true,
-        quickRun: "git clone https://github.com/YashashreeB-02/Simple-Password-Strength-Checker.git\njavac *.java && java AutoPasswordRunner"
-      },
-      food: {
-        badge: "Frontend Web Development",
-        badgeClass: "badge-web",
-        title: "Food Recipes Web Portal",
-        subtitle: "Pantry to Platter • Culinary Discovery & Community Portal",
-        image: "assets/projects/food_recipes_preview.png",
-        github: "https://github.com/YashashreeB-02/Food-Recipes",
-        desc: "A responsive, multi-page culinary discovery and recipe sharing web portal named Pantry to Platter. Features curated food sections for salads, vegan dishes, starters, and desserts with culinary tips and review submission.",
-        highlights: [
-          "Multi-page architecture with dedicated pages for All Recipes, Starters, Salads, Vegan, and Desserts",
-          "Responsive layouts optimized across mobile, tablet, and desktop screens",
-          "Integrated culinary reviews and contact submission interface",
-          "Semantic HTML5 structure and custom CSS3 styling"
-        ],
-        techStack: ["HTML5", "CSS3", "JavaScript", "Responsive Design", "Flexbox & CSS Grid", "UI/UX Design"],
-        quickRun: "git clone https://github.com/YashashreeB-02/Food-Recipes.git\n# Open index.html in any modern browser"
-      }
-    };
-
-    function openProjectModal(key) {
-      const data = projectData[key];
-      if (!data) return;
-
-      const modal = document.getElementById("projectModal");
-      const content = document.getElementById("modalContentArea");
-
-      let interactiveHtml = "";
-      if (data.isInteractiveTester) {
-        interactiveHtml = `
-          <div style="background: #0f172a; border: 1px solid #334155; border-radius: 14px; padding: 20px; margin: 20px 0; color: #f8fafc;">
-            <div style="font-weight: 800; font-size: 0.95rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">
-              <span>🧪</span> Try the Live Password Strength Analyzer:
-            </div>
-            <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 12px;">Type a test password below to see the Java algorithm evaluate entropy and rules in real-time:</p>
-            <input
-              type="text"
-              id="livePasswordInput"
-              placeholder="e.g. Strong@123 or TestPass9#"
-              oninput="evaluateLivePassword(this.value)"
-              style="width: 100%; padding: 10px 14px; border-radius: 10px; background: #1e293b; border: 1px solid #475569; color: #ffffff; font-family: monospace; font-size: 1rem; margin-bottom: 14px; box-sizing: border-box;"
-            />
-            <div id="liveStrengthResult" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-              <span style="font-size: 0.88rem; color: #94a3b8;">Strength Rating:</span>
-              <span id="liveStrengthBadge" style="font-weight: 800; font-size: 0.9rem; padding: 4px 12px; border-radius: 999px; background: #334155; color: #cbd5e1;">Awaiting Input</span>
-            </div>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px; font-size: 0.82rem;">
-              <div id="rule-len" style="color: #64748b;">✕ Minimum 8 characters</div>
-              <div id="rule-upper" style="color: #64748b;">✕ Uppercase letter (A-Z)</div>
-              <div id="rule-lower" style="color: #64748b;">✕ Lowercase letter (a-z)</div>
-              <div id="rule-num" style="color: #64748b;">✕ Numeric digit (0-9)</div>
-              <div id="rule-special" style="color: #64748b;">✕ Special symbol (@, #, $, !)</div>
-            </div>
-          </div>
-        `;
-      }
-
-      content.innerHTML = `
-        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
-          <span class="project-badge ${data.badgeClass}">${data.badge}</span>
-        </div>
-        <h2 style="font-size: 1.6rem; font-weight: 800; color: #0f172a; margin: 0 0 6px;">${data.title}</h2>
-        <p style="font-size: 0.92rem; color: #4f46e5; font-weight: 600; margin: 0 0 20px;">${data.subtitle}</p>
-
-        <div style="border-radius: 14px; overflow: hidden; margin-bottom: 22px; border: 1px solid #e2e8f0; background: #0f172a; max-height: 420px;">
-          <img src="${data.image}" alt="${data.title}" style="width: 100%; height: 100%; object-fit: contain; display: block;" />
-        </div>
-
-        <p style="font-size: 0.96rem; line-height: 1.7; color: #334155; margin-bottom: 18px;">${data.desc}</p>
-
-        <div style="margin-bottom: 20px;">
-          <h4 style="font-size: 0.95rem; font-weight: 800; color: #0f172a; margin-bottom: 10px;">Key Engineering Highlights:</h4>
-          <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 8px;">
-            ${data.highlights.map(h => `<li style="font-size: 0.9rem; line-height: 1.6; color: #334155; position: relative; padding-left: 20px;"><span style="position: absolute; left: 2px; color: #2563eb; font-weight: 900;">✔</span> ${h}</li>`).join('')}
-          </ul>
-        </div>
-
-        ${interactiveHtml}
-
-        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 14px 16px; margin-bottom: 22px;">
-          <span style="display: block; font-size: 0.74rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; color: #64748b; margin-bottom: 8px;">Technologies Used:</span>
-          <div class="tags" style="margin: 0;">
-            ${data.techStack.map(t => `<span class="tag">${t}</span>`).join('')}
-          </div>
-        </div>
-
-        <div style="background: #1e293b; border-radius: 12px; padding: 14px 18px; margin-bottom: 24px; font-family: monospace; font-size: 0.82rem; color: #38bdf8;">
-          <div style="font-size: 0.72rem; text-transform: uppercase; color: #94a3b8; font-weight: 700; margin-bottom: 6px; font-family: sans-serif;">Command to Run Locally:</div>
-          <pre style="margin: 0; white-space: pre-wrap; word-break: break-all; color: #f1f5f9;">${data.quickRun}</pre>
-        </div>
-
-        <div style="display: flex; gap: 14px; align-items: center; justify-content: flex-end;">
-          <button class="project-btn project-btn-secondary" onclick="closeProjectModal()">Close Preview</button>
-          <a class="project-btn project-btn-primary" href="${data.github}" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" style="fill: currentColor;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-            View Source Code on GitHub ↗
-          </a>
-        </div>
-      `;
-
-      modal.classList.add("open");
-      document.body.style.overflow = "hidden";
-    }
-
-    function closeProjectModal() {
-      const modal = document.getElementById("projectModal");
-      if (modal) {
-        modal.classList.remove("open");
-      }
-      document.body.style.overflow = "";
-    }
-
-    function handleModalBackdropClick(e) {
-      if (e.target.id === "projectModal") {
-        closeProjectModal();
-      }
-    }
-
-    document.addEventListener("keydown", function(e) {
-      if (e.key === "Escape") {
-        closeProjectModal();
-      }
-    });
-
-    // Live Password Evaluator Logic matching Java AutoPasswordRunner
-    function evaluateLivePassword(val) {
-      const ruleLen = val.length >= 8;
-      const ruleUpper = /[A-Z]/.test(val);
-      const ruleLower = /[a-z]/.test(val);
-      const ruleNum = /[0-9]/.test(val);
-      const ruleSpecial = /[^A-Za-z0-9]/.test(val);
-
-      const updateRule = (id, pass, text) => {
-        const el = document.getElementById(id);
-        if (el) {
-          el.innerHTML = `${pass ? '✔' : '✕'} ${text}`;
-          el.style.color = pass ? '#34d399' : '#64748b';
-          el.style.fontWeight = pass ? '700' : '400';
-        }
-      };
-
-      updateRule("rule-len", ruleLen, "Minimum 8 characters");
-      updateRule("rule-upper", ruleUpper, "Uppercase letter (A-Z)");
-      updateRule("rule-lower", ruleLower, "Lowercase letter (a-z)");
-      updateRule("rule-num", ruleNum, "Numeric digit (0-9)");
-      updateRule("rule-special", ruleSpecial, "Special symbol (@, #, $, !)");
-
-      const passCount = [ruleLen, ruleUpper, ruleLower, ruleNum, ruleSpecial].filter(Boolean).length;
-      const badge = document.getElementById("liveStrengthBadge");
-
-      if (!badge) return;
-
-      if (!val) {
-        badge.textContent = "Awaiting Input";
-        badge.style.background = "#334155";
-        badge.style.color = "#cbd5e1";
-      } else if (passCount === 5) {
-        badge.textContent = "STRONG (100% Entropy)";
-        badge.style.background = "rgba(16, 185, 129, 0.2)";
-        badge.style.color = "#34d399";
-        badge.style.border = "1px solid #10b981";
-      } else if (passCount >= 3) {
-        badge.textContent = `MEDIUM (${passCount}/5 Rules)`;
-        badge.style.background = "rgba(245, 158, 11, 0.2)";
-        badge.style.color = "#fbbf24";
-        badge.style.border = "1px solid #f59e0b";
-      } else {
-        badge.textContent = `WEAK (${passCount}/5 Rules)`;
-        badge.style.background = "rgba(239, 68, 68, 0.2)";
-        badge.style.color = "#f87171";
-        badge.style.border = "1px solid #ef4444";
       }
     }
 
