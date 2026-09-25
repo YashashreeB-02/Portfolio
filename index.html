@@ -890,48 +890,127 @@
     .certs {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+      gap: 22px;
     }
 
     .cert {
-      min-height: 155px;
       background: #ffffff;
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      padding: 26px;
-      box-shadow: var(--shadow-md);
-      transition: all 0.25s ease;
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
     }
 
     .cert:hover {
-      transform: translateY(-3px);
+      transform: translateY(-4px);
       border-color: #93c5fd;
       box-shadow: var(--shadow-lg);
     }
 
-    .cert h3 {
-      margin: 8px 0;
-      color: #0f172a;
-      font-size: 1.15rem;
-      font-weight: 700;
+    .cert-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
     }
 
-    .cert p {
-      color: var(--muted);
-      margin: 0;
-      font-size: 0.94rem;
+    .cert-provider {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #1d4ed8;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      padding: 3px 10px;
+      border-radius: 999px;
     }
 
     .date {
-      color: var(--accent);
-      font-size: 0.82rem;
-      font-weight: 800;
+      color: #475569;
+      font-size: 0.76rem;
+      font-weight: 700;
       letter-spacing: 0.5px;
       display: inline-block;
-      background: #eff6ff;
-      border: 1px solid #dbeafe;
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
       padding: 3px 10px;
       border-radius: 999px;
+    }
+
+    .cert h3 {
+      margin: 0 0 10px;
+      color: #0f172a;
+      font-size: 1.15rem;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+
+    .cert-desc {
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.6;
+      margin: 0 0 16px;
+    }
+
+    .cert-skills-wrap {
+      margin-top: auto;
+      margin-bottom: 16px;
+    }
+
+    .cert-skills-label {
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: #475569;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 6px;
+    }
+
+    .cert-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .cert-skill-tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      color: #334155;
+      padding: 3px 9px;
+      border-radius: 999px;
+    }
+
+    .btn-cert {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 9px 14px;
+      border-radius: 12px;
+      background: #eff6ff;
+      border: 1.5px solid #bfdbfe;
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      width: 100%;
+    }
+
+    .btn-cert:hover {
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: #ffffff;
+      border-color: transparent;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
     }
 
     /* ================= TRAINING ================= */
@@ -1354,7 +1433,7 @@
         </h2>
 
         <p>
-          B.Tech Computer Science and Engineering student at Lovely Professional University specializing in Data Science with Machine Learning (CGPA: 8.22), with practical experience in C++, Python, SQL, HTML, CSS, Scikit-Learn, Streamlit, and Data Structures & Algorithms.
+          B.Tech Computer Science and Engineering student at Lovely Professional University specializing in Data Science with Machine Learning, with practical experience in C++, Python, SQL, HTML, CSS, Scikit-Learn, Streamlit, and Data Structures & Algorithms.
         </p>
 
         <div class="actions">
@@ -1848,76 +1927,155 @@
 
       <div class="certs">
 
-
+        <!-- 1. INFOSYS -->
         <div class="cert">
-
-          <div class="date">
-            JUL 2026
+          <div class="cert-top">
+            <span class="cert-provider">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              Infosys Springboard
+            </span>
+            <span class="date">JUL 2026</span>
           </div>
 
-          <h3>
-            Database Management System
-            Part - 1 and 2
-          </h3>
+          <h3>Database Management System Part - 1 and 2</h3>
 
-          <p>
-            Infosys
+          <p class="cert-desc">
+            Comprehensive certification program focused on relational database principles, ER modeling, SQL querying, schema normalization, and database transaction control. Developed a strong command of relational integrity, indexing strategies, and database optimization.
           </p>
 
-        </div>
-
-
-        <div class="cert">
-
-          <div class="date">
-            APR 2025
+          <div class="cert-skills-wrap">
+            <div class="cert-skills-label">Skills Learned</div>
+            <div class="cert-skills">
+              <span class="cert-skill-tag">SQL</span>
+              <span class="cert-skill-tag">DBMS Architecture</span>
+              <span class="cert-skill-tag">ER Modeling</span>
+              <span class="cert-skill-tag">Normalization</span>
+              <span class="cert-skill-tag">Transaction Control</span>
+            </div>
           </div>
 
-          <h3>
-            Introduction to AI and ML
-          </h3>
-
-          <p>
-            Skillera
-          </p>
-
+          <a
+            class="btn-cert"
+            href="https://drive.google.com/drive/folders/1SXOkedMaXYPURmW3zT6PB3Rfm75D0cnt"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            View Certificate ↗
+          </a>
         </div>
 
-
+        <!-- 2. SKILLERA - AI & ML -->
         <div class="cert">
-
-          <div class="date">
-            JAN 2025
+          <div class="cert-top">
+            <span class="cert-provider">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              Skillera
+            </span>
+            <span class="date">APR 2025</span>
           </div>
 
-          <h3>
-            Python with Libraries
-          </h3>
+          <h3>Introduction to AI and ML</h3>
 
-          <p>
-            Skillera
+          <p class="cert-desc">
+            Foundational program covering essential artificial intelligence paradigms, supervised and unsupervised machine learning algorithms, data preprocessing, and model evaluation metrics including precision, recall, and ROC-AUC curves.
           </p>
 
-        </div>
-
-
-        <div class="cert">
-
-          <div class="date">
-            NOV 2024
+          <div class="cert-skills-wrap">
+            <div class="cert-skills-label">Skills Learned</div>
+            <div class="cert-skills">
+              <span class="cert-skill-tag">Machine Learning</span>
+              <span class="cert-skill-tag">Supervised Learning</span>
+              <span class="cert-skill-tag">Model Evaluation</span>
+              <span class="cert-skill-tag">Data Preprocessing</span>
+            </div>
           </div>
 
-          <h3>
-            Exploring Python Libraries
-            For Data Science
-          </h3>
-
-          <p>
-            UpGrad
-          </p>
-
+          <a
+            class="btn-cert"
+            href="https://drive.google.com/drive/folders/1SXOkedMaXYPURmW3zT6PB3Rfm75D0cnt"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            View Certificate ↗
+          </a>
         </div>
 
+        <!-- 3. SKILLERA - PYTHON -->
+        <div class="cert">
+          <div class="cert-top">
+            <span class="cert-provider">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              Skillera
+            </span>
+            <span class="date">JAN 2025</span>
+          </div>
+
+          <h3>Python with Libraries</h3>
+
+          <p class="cert-desc">
+            Practical course covering modern Python programming constructs, object-oriented software design, modules, and standard package development. Emphasized hands-on problem solving, clean file input/output workflows, and code optimization.
+          </p>
+
+          <div class="cert-skills-wrap">
+            <div class="cert-skills-label">Skills Learned</div>
+            <div class="cert-skills">
+              <span class="cert-skill-tag">Python 3</span>
+              <span class="cert-skill-tag">OOP</span>
+              <span class="cert-skill-tag">File Handling</span>
+              <span class="cert-skill-tag">Modular Programming</span>
+            </div>
+          </div>
+
+          <a
+            class="btn-cert"
+            href="https://drive.google.com/drive/folders/1SXOkedMaXYPURmW3zT6PB3Rfm75D0cnt"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            View Certificate ↗
+          </a>
+        </div>
+
+        <!-- 4. UPGRAD -->
+        <div class="cert">
+          <div class="cert-top">
+            <span class="cert-provider">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              upGrad
+            </span>
+            <span class="date">NOV 2024</span>
+          </div>
+
+          <h3>Exploring Python Libraries For Data Science</h3>
+
+          <p class="cert-desc">
+            Industry-oriented training on Python's core data science ecosystem, utilizing NumPy for multi-dimensional mathematical computation, Pandas for structured data manipulation, and Matplotlib with Seaborn for exploratory statistical visualizations.
+          </p>
+
+          <div class="cert-skills-wrap">
+            <div class="cert-skills-label">Skills Learned</div>
+            <div class="cert-skills">
+              <span class="cert-skill-tag">NumPy</span>
+              <span class="cert-skill-tag">Pandas</span>
+              <span class="cert-skill-tag">Matplotlib</span>
+              <span class="cert-skill-tag">Seaborn</span>
+              <span class="cert-skill-tag">EDA</span>
+            </div>
+          </div>
+
+          <a
+            class="btn-cert"
+            href="https://drive.google.com/drive/folders/1SXOkedMaXYPURmW3zT6PB3Rfm75D0cnt"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            View Certificate ↗
+          </a>
+        </div>
 
       </div>
 
