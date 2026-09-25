@@ -337,13 +337,9 @@
 
     .profile-card {
       background: #ffffff;
-
       border: 1px solid rgba(226, 232, 240, 0.95);
-
       border-radius: 32px;
-
-      padding: 36px 30px;
-
+      padding: 34px 28px;
       text-align: center;
       box-shadow: 0 20px 42px -10px rgba(37, 99, 235, 0.12), 0 4px 12px rgba(0, 0, 0, 0.03);
       position: relative;
@@ -355,50 +351,127 @@
       box-shadow: 0 26px 50px -12px rgba(37, 99, 235, 0.18), 0 6px 16px rgba(0, 0, 0, 0.04);
     }
 
-    .avatar {
+    .avatar-wrap {
+      position: relative;
       width: 190px;
       height: 190px;
+      margin: 0 auto 16px;
+    }
 
-      margin: auto;
-
+    .avatar-img {
+      width: 100%;
+      height: 100%;
       border-radius: 50%;
-
-      display: grid;
-      place-items: center;
-
-      font-size: 4rem;
-      font-weight: 800;
-
-      background: linear-gradient(
-        135deg,
-        #2563eb 0%,
-        #7c3aed 100%
-      );
-
-      color: #ffffff;
-
-      box-shadow:
-        0 14px 28px -6px rgba(37, 99, 235, 0.42),
-        0 0 0 10px rgba(37, 99, 235, 0.08);
+      object-fit: cover;
+      box-shadow: 0 14px 28px -6px rgba(37, 99, 235, 0.42), 0 0 0 8px rgba(37, 99, 235, 0.08);
+      border: 3px solid #ffffff;
+      display: block;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .profile-card:hover .avatar {
+    .profile-card:hover .avatar-img {
       transform: scale(1.03);
-      box-shadow: 0 18px 34px -6px rgba(37, 99, 235, 0.5), 0 0 0 12px rgba(37, 99, 235, 0.12);
+      box-shadow: 0 18px 34px -6px rgba(37, 99, 235, 0.5), 0 0 0 10px rgba(37, 99, 235, 0.12);
+    }
+
+    .status-badge {
+      position: absolute;
+      bottom: 4px;
+      right: 2px;
+      background: #ffffff;
+      border: 1.5px solid #bbf7d0;
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: #166534;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.2);
+      animation: pulse-dot 2s infinite;
+    }
+
+    @keyframes pulse-dot {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+      70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(34, 197, 94, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
     }
 
     .profile-card h3 {
       color: #0f172a;
-      margin: 20px 0 6px;
-      font-size: 1.25rem;
+      margin: 14px 0 4px;
+      font-size: 1.3rem;
+      font-weight: 800;
+    }
+
+    .role-subtitle {
+      color: var(--accent);
       font-weight: 700;
+      font-size: 0.95rem;
+      margin: 0 0 6px;
+    }
+
+    .cgpa-pill {
+      display: inline-block;
+      margin-top: 4px;
+      padding: 3px 10px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #1d4ed8;
     }
 
     .profile-card p {
       color: var(--muted);
-      font-size: 0.94rem;
-      margin: 0 0 18px;
+      font-size: 0.92rem;
+      margin: 0 0 16px;
+    }
+
+    .profile-actions {
+      margin-top: 18px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .profile-actions .btn {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .nav-cv-btn {
+      padding: 7px 15px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #ffffff !important;
+      font-size: 0.85rem !important;
+      font-weight: 700 !important;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .nav-cv-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+      color: #ffffff !important;
+    }
+
+    .nav-cv-btn::after {
+      display: none !important;
     }
 
     /* ================= SECTIONS ================= */
@@ -856,23 +929,32 @@
 
     .contact {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 28px;
+      align-items: start;
     }
 
-    .contact-card {
+    .contact-card,
+    .contact-form-card {
       background: #ffffff;
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      padding: 30px;
+      padding: 32px;
       box-shadow: var(--shadow-md);
+      transition: box-shadow 0.25s ease;
     }
 
-    .contact-card h3 {
-      margin: 0 0 14px;
+    .contact-card:hover,
+    .contact-form-card:hover {
+      box-shadow: var(--shadow-lg);
+    }
+
+    .contact-card h3,
+    .contact-form-card h3 {
+      margin: 0 0 12px;
       color: #0f172a;
-      font-size: 1.3rem;
-      font-weight: 700;
+      font-size: 1.35rem;
+      font-weight: 800;
     }
 
     .contact-list {
@@ -881,7 +963,7 @@
     }
 
     .contact-item {
-      padding: 16px 18px;
+      padding: 15px 18px;
       border: 1px solid var(--line);
       border-radius: 16px;
       background: #f8fafc;
@@ -907,6 +989,90 @@
       text-transform: uppercase;
       letter-spacing: 0.8px;
       margin-bottom: 3px;
+    }
+
+    .contact-item.cv-item {
+      border: 1.5px dashed #93c5fd;
+      background: #eff6ff;
+      color: #1d4ed8;
+      font-weight: 700;
+    }
+
+    .contact-item.cv-item:hover {
+      background: #dbeafe;
+      border-color: var(--accent);
+    }
+
+    /* Contact Form (Message Box) */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-group label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #334155;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1.5px solid var(--line);
+      border-radius: 12px;
+      font-family: inherit;
+      font-size: 0.94rem;
+      color: #0f172a;
+      background: #f8fafc;
+      transition: all 0.2s ease;
+      box-sizing: border-box;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--accent);
+      background: #ffffff;
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+    }
+
+    .form-control::placeholder {
+      color: #94a3b8;
+    }
+
+    textarea.form-control {
+      resize: vertical;
+      min-height: 110px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      justify-content: center;
+      padding: 14px;
+      font-size: 1rem;
+    }
+
+    .form-status {
+      display: none;
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .form-status.success {
+      display: block;
+      background: #ecfdf5;
+      color: #065f46;
+      border: 1px solid #a7f3d0;
     }
 
     /* ================= FOOTER ================= */
@@ -1030,6 +1196,15 @@
           Contact
         </a>
 
+        <a
+          class="nav-cv-btn"
+          href="assets/Yashashree_Borkar_Resume.pdf"
+          download="Yashashree_Borkar_Resume.pdf"
+          title="Download Curriculum Vitae (PDF)"
+        >
+          📄 CV ⬇
+        </a>
+
       </div>
 
     </div>
@@ -1045,7 +1220,7 @@
       <div>
 
         <span class="pill">
-          Data Science & Machine Learning
+          🤖 Aspiring AI / ML Engineer
         </span>
 
         <h1>
@@ -1062,25 +1237,26 @@
         </h1>
 
         <h2>
-          Data Science Student | Python & C++ |
-          Machine Learning
+          Aspiring AI / Machine Learning Engineer | Deep Learning, Predictive Modeling & Intelligent Systems
         </h2>
 
         <p>
-
-          I am a B.Tech Computer Science and Engineering
-          student specializing in Data Science with
-          Machine Learning at Lovely Professional University.
-          I enjoy applying programming, data analysis,
-          machine learning, and problem-solving concepts
-          to practical projects.
-
+          Passionate about building scalable AI/ML pipelines, end-to-end predictive models, and data-driven solutions. B.Tech Computer Science & Engineering student at Lovely Professional University specializing in Data Science with Machine Learning (CGPA: 8.22), with hands-on expertise in Python, C++, Scikit-Learn, Streamlit, and algorithmic problem-solving.
         </p>
 
         <div class="actions">
 
           <a
             class="btn primary"
+            href="assets/Yashashree_Borkar_Resume.pdf"
+            download="Yashashree_Borkar_Resume.pdf"
+          >
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="vertical-align:middle;margin-right:4px;"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+            Download CV (PDF)
+          </a>
+
+          <a
+            class="btn"
             href="#projects"
           >
             Explore Projects
@@ -1088,15 +1264,16 @@
 
           <a
             class="btn"
-            href="mailto:yashashreeborkar05@gmail.com"
+            href="#contact"
           >
-            Let's Connect
+            Send Message ✉️
           </a>
 
           <a
             class="btn"
             href="https://github.com/YashashreeB-02"
             target="_blank"
+            rel="noopener noreferrer"
           >
             GitHub ↗
           </a>
@@ -1110,35 +1287,54 @@
 
       <div class="profile-card">
 
-        <div class="avatar">
-          YB
+        <div class="avatar-wrap">
+          <img
+            src="assets/profile.png"
+            alt="Yashashree Ganesh Borkar"
+            class="avatar-img"
+          />
+          <span class="status-badge" title="Open to AI/ML Opportunities">
+            <span class="status-dot"></span> Open to Roles
+          </span>
         </div>
 
         <h3>
-          Computer Science & Engineering
+          Yashashree Borkar
         </h3>
 
-        <p>
+        <div class="role-subtitle">
+          Aspiring AI / ML Engineer
+        </div>
 
+        <p>
           Data Science with Machine Learning
           <br />
-
-          CGPA: 8.22
-
+          <span class="cgpa-pill">CGPA: 8.22 • LPU</span>
         </p>
 
         <div class="tags">
 
+          <span class="tag">Machine Learning</span>
+
           <span class="tag">Python</span>
+
+          <span class="tag">Deep Learning</span>
 
           <span class="tag">C++</span>
 
-          <span class="tag">ML</span>
+          <span class="tag">Data Science</span>
 
-          <span class="tag">
-            Data Science
-          </span>
+        </div>
 
+        <div class="profile-actions">
+          <a
+            class="btn primary"
+            href="assets/Yashashree_Borkar_Resume.pdf"
+            download="Yashashree_Borkar_Resume.pdf"
+          >
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="vertical-align:middle;margin-right:4px;"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+            Download CV
+          </a>
         </div>
 
       </div>
@@ -1853,15 +2049,11 @@
         </div>
 
         <h2 class="section-title">
-          Contact
+          Contact & Inquiries
         </h2>
 
         <p class="section-desc">
-
-          Interested in Data Science,
-          Machine Learning, software projects,
-          and opportunities to learn and contribute.
-
+          Interested in AI / Machine Learning engineering roles, data science projects, and collaborative opportunities. Send a message below to land directly in my inbox, or connect through the channels listed.
         </p>
 
       </div>
@@ -1870,6 +2062,7 @@
       <div class="contact">
 
 
+        <!-- Direct Info & Links Card -->
         <div class="contact-card">
 
           <h3>
@@ -1887,7 +2080,7 @@
             >
 
               <span>
-                Email
+                Email Address
               </span>
 
               yashashreeborkar05@gmail.com
@@ -1901,37 +2094,23 @@
             >
 
               <span>
-                Mobile
+                Mobile Contact
               </span>
 
               +91 8767205228
 
             </a>
 
-          </div>
-
-        </div>
-
-
-        <div class="contact-card">
-
-          <h3>
-            Find me online
-          </h3>
-
-          <div
-            class="contact-list"
-            style="margin-top:18px"
-          >
 
             <a
               class="contact-item"
               href="https://www.linkedin.com/in/yashashree-borkar/"
               target="_blank"
+              rel="noopener noreferrer"
             >
 
               <span>
-                LinkedIn
+                LinkedIn Profile
               </span>
 
               linkedin.com/in/yashashree-borkar
@@ -1943,17 +2122,113 @@
               class="contact-item"
               href="https://github.com/YashashreeB-02"
               target="_blank"
+              rel="noopener noreferrer"
             >
 
               <span>
-                GitHub
+                GitHub Repositories
               </span>
 
               github.com/YashashreeB-02
 
             </a>
 
+            <!-- Downloadable CV Card -->
+            <a
+              class="contact-item cv-item"
+              href="assets/Yashashree_Borkar_Resume.pdf"
+              download="Yashashree_Borkar_Resume.pdf"
+            >
+
+              <span>
+                Curriculum Vitae
+              </span>
+
+              📄 Download Resume / CV (PDF) ⬇
+
+            </a>
+
           </div>
+
+        </div>
+
+
+        <!-- Message Box that Lands Directly in Email -->
+        <div class="contact-form-card">
+
+          <h3>
+            Send Me a Message
+          </h3>
+
+          <p style="color:var(--muted); font-size: 0.92rem; margin: 4px 0 16px;">
+            Fill out the form below and your message will land directly in my inbox at <strong>yashashreeborkar05@gmail.com</strong>.
+          </p>
+
+          <form
+            id="contact-form"
+            action="https://formsubmit.co/yashashreeborkar05@gmail.com"
+            method="POST"
+            class="contact-form"
+          >
+            <!-- FormSubmit settings -->
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_subject" value="New Portfolio Inquiry for Yashashree (AI/ML)">
+
+            <div class="form-group">
+              <label for="form-name">Your Name</label>
+              <input
+                type="text"
+                id="form-name"
+                name="name"
+                class="form-control"
+                placeholder="e.g. Alex Smith"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="form-email">Your Email Address</label>
+              <input
+                type="email"
+                id="form-email"
+                name="email"
+                class="form-control"
+                placeholder="e.g. alex@company.com"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="form-subject">Subject</label>
+              <input
+                type="text"
+                id="form-subject"
+                name="_subject_custom"
+                class="form-control"
+                placeholder="Job Opportunity, Collaboration, etc."
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="form-message">Your Message</label>
+              <textarea
+                id="form-message"
+                name="message"
+                class="form-control"
+                rows="4"
+                placeholder="Hi Yashashree, I would like to connect with you regarding..."
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" id="submit-btn" class="btn primary submit-btn">
+              Send Message 🚀
+            </button>
+
+            <div id="form-status" class="form-status"></div>
+          </form>
 
         </div>
 
@@ -1970,7 +2245,7 @@
   <footer>
 
     © 2026 Yashashree Ganesh Borkar
-    • Data Science & Machine Learning
+    • Aspiring AI / ML Engineer • Data Science & Machine Learning
 
   </footer>
 
@@ -2003,6 +2278,66 @@
         });
 
       });
+
+    // Contact Form Handler with AJAX submission and mailto fallback
+    const contactForm = document.getElementById("contact-form");
+    const formStatus = document.getElementById("form-status");
+    const submitBtn = document.getElementById("submit-btn");
+
+    if (contactForm) {
+      contactForm.addEventListener("submit", async function(e) {
+        e.preventDefault();
+
+        const name = document.getElementById("form-name").value.trim();
+        const email = document.getElementById("form-email").value.trim();
+        const subject = document.getElementById("form-subject").value.trim();
+        const message = document.getElementById("form-message").value.trim();
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Sending Message...";
+        formStatus.className = "form-status";
+        formStatus.style.display = "none";
+
+        try {
+          const response = await fetch("https://formsubmit.co/ajax/yashashreeborkar05@gmail.com", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "Accept": "application/json"
+            },
+            body: JSON.stringify({
+              name: name,
+              email: email,
+              _subject: `[Portfolio Inquiry] ${subject}`,
+              message: message,
+              _template: "table"
+            })
+          });
+
+          if (response.ok) {
+            formStatus.className = "form-status success";
+            formStatus.style.display = "block";
+            formStatus.textContent = "✅ Thank you! Your message has been sent directly to Yashashree's email.";
+            contactForm.reset();
+            submitBtn.textContent = "Message Sent! ✓";
+            setTimeout(() => {
+              submitBtn.disabled = false;
+              submitBtn.textContent = "Send Another Message 🚀";
+            }, 3000);
+          } else {
+            throw new Error("Submission network error");
+          }
+        } catch (err) {
+          // Graceful fallback to mailto
+          formStatus.className = "form-status success";
+          formStatus.style.display = "block";
+          formStatus.innerHTML = `Connecting directly to email... If it doesn't open, <a href="mailto:yashashreeborkar05@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message + '\n\nFrom: ' + name + ' (' + email + ')')}" style="text-decoration:underline;color:inherit;font-weight:700;">click here to send via mail client</a>.`;
+          window.location.href = `mailto:yashashreeborkar05@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message + '\n\nFrom: ' + name + ' (' + email + ')')}`;
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Send Message 🚀";
+        }
+      });
+    }
 
   </script>
 
