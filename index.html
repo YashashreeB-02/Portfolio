@@ -1296,7 +1296,7 @@
           class="nav-cv-btn"
           href="assets/Yashashree_Borkar_Resume.pdf"
           download="Yashashree_Borkar_Resume.pdf"
-          title="Download Curriculum Vitae (PDF)"
+          title="Download Curriculum Vitae"
         >
           📄 CV ⬇
         </a>
@@ -1348,7 +1348,7 @@
             download="Yashashree_Borkar_Resume.pdf"
           >
             <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="vertical-align:middle;margin-right:4px;"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
-            Download CV (PDF)
+            Download CV
           </a>
 
           <a
@@ -2286,7 +2286,7 @@
                 Curriculum Vitae
               </span>
 
-              📄 Download Resume / CV (PDF) ⬇
+              📄 Download Resume / CV ⬇
 
             </a>
 
@@ -2337,18 +2337,6 @@
                 name="email"
                 class="form-control"
                 placeholder="e.g. alex@company.com"
-                required
-              />
-            </div>
-
-            <div class="form-group">
-              <label for="form-subject">Subject</label>
-              <input
-                type="text"
-                id="form-subject"
-                name="_subject_custom"
-                class="form-control"
-                placeholder="Job Opportunity, Collaboration, etc."
                 required
               />
             </div>
@@ -2687,7 +2675,6 @@
 
         const name = document.getElementById("form-name").value.trim();
         const email = document.getElementById("form-email").value.trim();
-        const subject = document.getElementById("form-subject").value.trim();
         const message = document.getElementById("form-message").value.trim();
 
         submitBtn.disabled = true;
@@ -2705,7 +2692,7 @@
             body: JSON.stringify({
               name: name,
               email: email,
-              _subject: `[Portfolio Inquiry] ${subject}`,
+              _subject: `[Portfolio Inquiry] From ${name}`,
               message: message,
               _template: "table"
             })
@@ -2728,8 +2715,8 @@
           // Graceful fallback to mailto
           formStatus.className = "form-status success";
           formStatus.style.display = "block";
-          formStatus.innerHTML = `Connecting directly to email... If it doesn't open, <a href="mailto:yashashreeborkar05@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message + '\n\nFrom: ' + name + ' (' + email + ')')}" style="text-decoration:underline;color:inherit;font-weight:700;">click here to send via mail client</a>.`;
-          window.location.href = `mailto:yashashreeborkar05@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message + '\n\nFrom: ' + name + ' (' + email + ')')}`;
+          formStatus.innerHTML = `Connecting directly to email... If it doesn't open, <a href="mailto:yashashreeborkar05@gmail.com?subject=${encodeURIComponent('[Portfolio Inquiry] From ' + name)}&body=${encodeURIComponent(message + '\n\nFrom: ' + name + ' (' + email + ')')}" style="text-decoration:underline;color:inherit;font-weight:700;">click here to send via mail client</a>.`;
+          window.location.href = `mailto:yashashreeborkar05@gmail.com?subject=${encodeURIComponent('[Portfolio Inquiry] From ' + name)}&body=${encodeURIComponent(message + '\n\nFrom: ' + name + ' (' + email + ')')}`;
           submitBtn.disabled = false;
           submitBtn.textContent = "Send Message 🚀";
         }
